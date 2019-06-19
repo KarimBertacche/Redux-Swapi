@@ -3,16 +3,16 @@ import * as types from "../actions/index";
 const initialState = {
   characters: [],
   error: null,
-  loading: false,
+  fetching: false,
 };
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCHING:
-      return {...state, loading: true };
+      return {...state, fetching: true };
     case types.SUCCESS:
-      return {...state, characters: action.payload, loading: false };
+      return {...state, characters: action.payload, fetching: false };
     case types.FAILURE: 
-      return {...state, error: action.payload, loading: false };
+      return {...state, error: action.payload, fetching: false };
     default:
       return state;
   }
