@@ -9,7 +9,7 @@ export const fetchingAPI = () => dispatch => {
         type: FETCHING
     })
     axios
-        .get('https://swapi.co/api/peop')
+        .get('https://swapi.co/api/people/')
         .then(response => {
             dispatch({
                 type: SUCCESS,
